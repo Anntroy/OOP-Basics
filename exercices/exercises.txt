@@ -1,0 +1,23 @@
+Exercise 1-2
+
+Create a class called Device.
+Then create another one called Mobile and then another one called Tablet.
+The Device has to define the common properties for a device, like, for example, a method called  getSerialNumber() which returns the Device serial number.
+The Mobile and Tablet classes have to extend the Device class and define some particular properties by their own.
+You should also create a class called DeviceManager. This class has to have a method called getDeviceSerialNumber(Device $device) which has to call the getSerialNumber() method of Device objects.
+The DeviceManager Instance calls the getDeviceSerialNumber method with each one of the devices objects.
+
+Exercise 3
+
+Create an abstract class Device which defines an abstract method called getDetail($deviceId).
+Create these two methods getId which returns the name of this device and getSerialNo returns the serial number for this device. 
+Now create a class which extends the Device and implements getDetail($deviceId) method. Each device defines in its own way the details. That’s why it is abstracted to let the subclasses implement this method. The other methods are common between devices.
+
+Exercise 4
+
+Now let’s create an interface for a Device repository.
+First create a Device class with some properties, as you like. 
+Then create an interface called DeviceRepository, which defines two methods create(Device $device) which has an injection of the Device class you have created, and findById($deviceId) which with the $deviceId returns the Device object but remember this is an interface do not implement methods, it just defines them. 
+Now we need an implementation of the interface DeviceRepository so we are going to create a class called MemoryRepository which implements the DeviceRepository. Here you can define the methods as you like. 
+Finally we need to create a class called DeviceManager, which defines a method addDevice(DeviceRepository $repository, Device $device).
+Create an instance of it and inject to this method the implementation you have done.
