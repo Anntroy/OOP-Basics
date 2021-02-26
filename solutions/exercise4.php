@@ -1,8 +1,8 @@
 <?php
-function debugger($cosa)
+function debugger($item)
 {
   echo '<pre>';
-  print_r($cosa);
+  print_r($item);
   echo '</pre>';
 }
 
